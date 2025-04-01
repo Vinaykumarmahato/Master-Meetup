@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Meetup</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* Basic styling */
         
@@ -211,6 +214,103 @@ button:hover {
 .dark-mode button {
     background: #333333;  /* Darker background for dark mode */
 }
+footer {
+    background: linear-gradient(135deg, #cbe2ed, #a1d0e3);
+    color: #3952f9;
+    margin-top: 20px;
+    padding: 2px 0px;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 4px solid #46ff08;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+footer p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Icons Styling */
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+footer .social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #f0f0f0;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Font Awesome Icons */
+footer .social-icon i {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+footer .social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual Icon Colors */
+footer .social-icon:nth-child(1):hover i { color: #0A66C2; }  /* LinkedIn */
+footer .social-icon:nth-child(2):hover i { color: #181717; }  /* GitHub */
+footer .social-icon:nth-child(3):hover i { color: #E4405F; }  /* Instagram */
+footer .social-icon:nth-child(4):hover i { color: #FF0000; }  /* YouTube */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 1.1rem;
+    }
+
+    footer .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    footer .social-icon i {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 1rem;
+    }
+
+    footer .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    footer .social-icon i {
+        font-size: 1.2rem;
+    }
+}
 
     </style>
 </head>
@@ -231,6 +331,8 @@ button:hover {
            
             <p id="countdown">⏳ Countdown will appear here</p>
         </div>
+
+      
         
         <p>🚀 <span style="font-weight: bold; color: #6c5ce7;">Tech Industry Insights | Career Guidance | Placement & Internship Strategies</span></p>
         <p>📚 For Engineering, BCA, MCA & Tech Students</p>
@@ -256,7 +358,30 @@ button:hover {
        
 
         <a href="https://booking.appointy.com/advindiancoder?_ga=2.222699355.1990951146.1742979207-1022100320.1742979207https://booking.appointy.com/advindiancoder?_ga=2.222699355.1990951146.1742979207-1022100320.1742979207" class="cta-button">🔗 Limited Slots – Book Now!</a>
+        <footer>
+            <div class="footer-content">
+                <p>📢 Follow me on:</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/vinay-kumar860964/" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/yourchannel" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+        
     </div>
+    
+    
 
     
     <script>
@@ -295,5 +420,8 @@ button:hover {
             const timer = setInterval(updateCountdown, 1000); // Update every second
         };
     </script>
+   
     </body>
+    
+    
 </html>
