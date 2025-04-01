@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Meetup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styling */
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: #6c5ce7;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Countdown Styling */
+        #countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6f61;
+            margin-top: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 30px;
+            background: #6c5ce7;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #ff6f61;
+            transform: scale(1.05);
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #222222;
+            color: white;
+        }
+
+        .dark-mode .container {
+            background-color: #333333;
+            color: white;
+        }
+
+        .dark-mode #countdown {
+            color: #f1c40f;
+        }
+
+        /* Image Styling */
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
+        }
+
+       /* WHAT YOU'LL LEARN Styling */
+.learn-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.learn-section h2 {
+    color: #6c5ce7;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.learn-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.learn-section li {
+    margin: 12px 0;
+}
+
+/* Responsive Styling for Tablets and Mobile */
+@media (max-width: 768px) {
+    .learn-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .learn-section ul {
+        font-size: 1rem;
+    }
+
+    .learn-section li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .learn-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .learn-section ul {
+        font-size: 0.9rem;
+    }
+
+    .learn-section li {
+        margin: 8px 0;
+    }
+}
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            #countdown {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
+
+        /* Toggle Button Styling */
+button {
+    width: 50px;  /* Set a fixed width */
+    height: 50px;  /* Set a fixed height */
+    padding: 60;  /* Remove padding */
+    background: #6c5ce7;  /* Background color */
+    color: white;  /* Text color */
+    border: none;  /* Remove border */
+    border-radius: 50%;  /* Make it round */
+    cursor: pointer;  /* Cursor pointer on hover */
+    position: fixed;  /* Fixed positioning to stay in place */
+    top: 20px;  /* Distance from the top */
+    right: 20px;  /* Distance from the right */
+    font-size: 1.5rem;  /* Adjust font size */
+    display: flex;  /* Flexbox for centering text */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    transition: background 0.3s ease, transform 0.3s ease;  /* Smooth transitions */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* Add a shadow for a nice effect */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background: #ff6f61;  /* Change background on hover */
+    transform: scale(1.1);  /* Slightly scale up the button */
+}
+
+/* Optional: Dark Mode styling for the button */
+.dark-mode button {
+    background: #333333;  /* Darker background for dark mode */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Modern Profile Photo Instagram Post.png" alt="Vinay Kumar Mahato">
+            <button onclick="toggleDarkMode()" style="padding: 10px 20px; background: #6c5ce7; color: white; border: none; border-radius: 25px; cursor: pointer;">🌙 </button>
+            <h2>🎤 Master Meetup with Vinay Kumar Mahato</h2>
+            
+            <h3>Tech Educator | Java Full Stack Developer | Founder & Innovator</h3>
+            <p><strong>Expertise:</strong> Java | Spring Boot | Hibernate | J2EE | JDBC | Servlets | REST API | MySQL  | GitHub | HTML | CSS | JavaScript | React.js | Next.js | Node.js | Bootstrap</p>
+            <p><strong>Educator & Mentor:</strong> Technology | Programming | Software Development | System Design</p>
+            <p><strong>Visionary Entrepreneur:</strong> Building IT Solutions | Driving Innovation | Empowering Learners</p>
+            <p><em>"Code, Innovate, and Lead the Future!" 🚀</em></p>
+             <a href="https://bit.ly/423JX9y" class="cta-button">🔗 Limited Slots – Book Now!</a>
+        
+           
+            <p id="countdown">⏳ Countdown will appear here</p>
+        </div>
+        
+        <p>🚀 <span style="font-weight: bold; color: #6c5ce7;">Tech Industry Insights | Career Guidance | Placement & Internship Strategies</span></p>
+        <p>📚 For Engineering, BCA, MCA & Tech Students</p>
+        <p>💡 Empowering Future Tech Leaders, Transforming Careers with Expert Insights</p>
+
+        <!-- Updated "WHAT YOU'LL LEARN?" Section -->
+        <div class="learn-section">
+            <h2>🎯 WHAT YOU’LL LEARN?</h2>
+            <ul>
+                <li>✅ 🎯 <strong style="color: #6c5ce7;">Career Roadmap for College Students</strong> – Step-by-step guide to a successful tech career</li>
+                <li>✅ 🔍 <strong style="color: #6c5ce7;">Industry Trends & Emerging Technologies</strong> – Stay ahead with the latest innovations</li>
+                <li>✅ 📝 <strong style="color: #6c5ce7;">LinkedIn, GitHub & Resume Optimization</strong> – Build a strong online presence & get hired</li>
+                <li>✅ 🎯 <strong style="color: #6c5ce7;">Internship & Freelancing Strategies</strong> – Land internships & earn through freelancing</li>
+                <li>✅ 🎤 <strong style="color: #6c5ce7;">Live Q&A Session – Get Expert Guidance</strong> – Ask & clear your doubts with experts</li>
+                <li>✅ 💻 <strong style="color: #6c5ce7;">Open Source Contribution</strong> – How to contribute & build a strong portfolio</li>
+                <li>✅ 🔗 <strong style="color: #6c5ce7;">Networking & Personal Branding</strong> – Grow professionally on LinkedIn & GitHub</li>
+                <li>✅ 💰 <strong style="color: #6c5ce7;">Financial Literacy for Techies</strong> – Managing salaries, investments & passive income</li>
+                <li>✅ 🛠️ <strong style="color: #6c5ce7;">System Design Basics</strong> – Essential knowledge for high-paying software jobs</li>
+            </ul>
+            
+        </div>
+
+       
+
+        <a href="https://bit.ly/423JX9y" class="cta-button">🔗 Limited Slots – Book Now!</a>
+    </div>
+
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    
+        window.onload = function () {
+            const eventStartDate = new Date(Date.UTC(2025, 3, 1, 0, 0, 0)); // April 1st, 2025
+            const eventEndDate = new Date(Date.UTC(2025, 5, 1, 0, 0, 0)); // June 1st, 2025
+    
+            function updateCountdown() {
+                const now = new Date().getTime();
+    
+                if (now < eventStartDate) {
+                    let distance = eventStartDate - now;
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    document.getElementById("countdown").innerText = `⏳ Booking starts in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+                } else if (now >= eventStartDate && now < eventEndDate) {
+                    let distance = eventEndDate - now;
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    document.getElementById("countdown").innerText = `⏳ Booking ends in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+                } else {
+                    document.getElementById("countdown").innerText = "🎉 Booking Closed!";
+                    clearInterval(timer);
+                }
+            }
+    
+            updateCountdown(); // Initial call to avoid delay
+            const timer = setInterval(updateCountdown, 1000); // Update every second
+        };
+    </script>
+    </body>
+</html>
